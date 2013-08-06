@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9rwi7hwI8oeUF2rdUdVEzRmZZJvAq-MQ&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+         
+
+
+          
+          var styles = [
+ {
+      featureType: "road",
+      elementType: "all",
+      stylers: [
+        { visibility:"off" },
+        
+      ]
+    },{
+      featureType: "poi",
+      elementType: "all",
+      stylers: [
+        { visibility:"off" },
+        
+      ]
+    },
+  ];
+
+  // Create a new StyledMapType object, passing it the array of styles,
+  // as well as the name to be displayed on the map type control.
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
+       var mapOptions = {
+          center: new google.maps.LatLng(57.1425,-2.083),
+          disableDefaultUI: true,
+          mapTypeControl: false,
+          zoom: 10,
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+
+
+      var myLatLng = new google.maps.LatLng(60.8063888888889,-0.778333333333333);
+      var markerOne = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob"
+  });
+    var myLatLng = new google.maps.LatLng( 60.5463888888889,-1.79388888888889);
+      var markerTwo = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob2"
+  });
+          var myLatLng = new google.maps.LatLng(60.25,-1.15);
+      var markerThree = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob3"
+  });
+          var myLatLng = new google.maps.LatLng(60.2008333333333,-1.6);
+      var markerFour = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob4"
+  });
+          var myLatLng = new google.maps.LatLng(60.1841666666667, -1.51666666666667);
+      var markerFive = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob5"
+  });
+
+          var myLatLng = new google.maps.LatLng(60.0338888888889,-1.20194444444444);
+      var markerSix = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob6"
+  });
+
+          var myLatLng = new google.maps.LatLng(60.1516666666667, -1.13527777777778);
+      var markerSeven = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob7"
+  });
+
+          var myLatLng = new google.maps.LatLng( 60.0338888888889, -1.20194444444444);
+      var markerEight = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob8"
+  });
+
+          var myLatLng = new google.maps.LatLng(60.0,-1.41666666666667);
+      var markerNine = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob9"
+  });
+
+      var myLatLng = new google.maps.LatLng(59.25,-2.41666666666667);
+      var markerTen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob10"
+  });
+
+                var myLatLng = new google.maps.LatLng(59.5508333333333,-1.65);
+      var markerEleven = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob11"
+  });
+
+      var myLatLng = new google.maps.LatLng(59.25,-2.08333333333333);
+      var markerTwelve = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob12"
+  });
+
+    var myLatLng = new google.maps.LatLng( 58.5258333333333,-5.56305555555556);
+      var markerThirteen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob13"
+  });
+
+      var myLatLng = new google.maps.LatLng(60.4177777777778, -2.39222222222222);
+      var markerFourteen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob14"
+  });
+
+      var myLatLng = new google.maps.LatLng( 55.9166666666667,  -2);
+      var markerFifteen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"OddBlob15"
+  });
+
+
+    var myLatLng = new google.maps.LatLng( 57.1425,-2.083);
+
+    var markerAberdeen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title:"Aberdeen"
+  });
+
+
+    var newShipPos =new google.maps.LatLng( 57.1425,-2.083);
+    var newShipMarker = new google.maps.Marker({
+      position: shipPos,
+      map: map,
+      title:"You"
+  });
+      
+ 
+
+
+
+   
+ 
+
+    map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
+      }
+ 
+    
+      
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+ google.maps.event.addListener(map, 'click', function(event) {
+   var oldShip=new google.maps.Marker(newShipMarker)
+   newShipMarker.setMap(null);
+   var newShipPos= new google.maps.LatLng(event.latLng);
+   var newShip = new google.maps.Marker({
+      position: newShipPos,
+      map: map,
+      title:"You"
+  });
+    oldShip.setMap(null); 
+  });
+ 
+
+      
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
