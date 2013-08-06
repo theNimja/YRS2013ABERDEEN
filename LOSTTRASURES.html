@@ -8,8 +8,9 @@
       #map-canvas { height: 100% }
     </style>
     <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9rwi7hwI8oeUF2rdUdVEzRmZZJvAq-MQ&sensor=false">
+      src="https://maps.googleapis.com/maps/api/js?libraries=geometry,key=AIzaSyC9rwi7hwI8oeUF2rdUdVEzRmZZJvAq-MQ&sensor=false">
     </script>
+	
     <script type="text/javascript">
       function initialize() {
          
@@ -40,20 +41,21 @@
     {name: "Styled Map"});
        var mapOptions = {
           center: new google.maps.LatLng(57.1425,-2.083),
-          disableDefaultUI: true,
+          
           mapTypeControl: false,
           zoom: 10,
           mapTypeId: google.maps.MapTypeId.TERRAIN
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
-
+	  var noTreasure=;
 	  var treasure="trssur chest.png";
       var myLatLng = new google.maps.LatLng(60.8063888888889,-0.778333333333333);
       var markerOne = new google.maps.Marker({
       position: myLatLng,
       map: map,
 	  icon:treasure,
+				  icon:treasure,
       title:"OddBlob"
   });
     var myLatLng = new google.maps.LatLng( 60.5463888888889,-1.79388888888889);
@@ -61,6 +63,7 @@
       position: myLatLng,
       map: map,
 	  con:treasure,
+				  icon:treasure,
       title:"OddBlob2"
   });
           var myLatLng = new google.maps.LatLng(60.25,-1.15);
@@ -157,13 +160,46 @@
       title:"OddBlob14"
   });
 
-      var myLatLng = new google.maps.LatLng( 55.9166666666667,  -2);
+      var myLatLng = new google.maps.LatLng(55.9166666666667,-2);
       var markerFifteen = new google.maps.Marker({
       position: myLatLng,
       map: map,
 				  icon:treasure,
       title:"OddBlob15"
   });
+			
+	var myLatLng = new google.maps.LatLng(55.9166666666667,-1.93333333333333);
+      var markerSixteen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+				  icon:treasure,
+      title:"OddBlob16"
+  });
+			
+var myLatLng = new google.maps.LatLng(56.8480555555556,-6.8175);
+      var markerSeventeen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+				 icon:treasure,
+      title:"OddBlob17"
+  });
+			
+var myLatLng = new google.maps.LatLng( 56.2477777777778,-5.20222222222222);
+      var markerEighteen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+				 icon:treasure,
+      title:"OddBlob18"
+  });
+			
+	
+			
+			
+			
+			
+
+			
+			
 
 
  
@@ -177,8 +213,27 @@
 	  icon:player
   });
       
- 
-
+var gold=0;
+var efficiency=1;			
+var allWrecks = new Array();
+allWrecks[0]=markerOne;
+allWrecks[1]=markerTwo;
+allWrecks[2]=markerThree;
+allWrecks[3]=markerFour;
+allWrecks[4]=markerFive;
+allWrecks[5]=markerSix;
+allWrecks[6]=markerSeven;
+allWrecks[7]=markerEight;
+allWrecks[8]=markerNine;
+allWrecks[9]=markerTen;
+allWrecks[10]=markerEleven;
+allWrecks[11]=markerTwelve;
+allWrecks[12]=markerThirteen;
+allWrecks[13]=markerFourteen;
+allWrecks[14]=markerFifteen;
+allWrecks[15]=markerSixteen;
+allWrecks[16]=markerSeventeen;
+allWrecks[17]=markerEighteen;	
 
 
    
@@ -188,10 +243,35 @@
   map.setMapTypeId('map_style');
       
  google.maps.event.addListener(map, 'click', function(event) {
-  shipMarker.setPosition(event.latLng);
+var newPos =event.latLng;
+shipMarker.setPosition(newPos);
+	
+	for (var i =0;i<allWrecks.length;i++){
+			
+	
+		if (google.maps.geometry.spherical.computeDistanceBetween (newPos, allWrecks[i].getPosition(),6378137)<=1500){
+			alert("You found the treasure of the "+ allWrecks[i].getTitle());
+			gold+=GetGold();
+			allWrecks[i].setIcon(noTreasure);
+			allWrecks.splice(i,1);
+			}	
+			
+			
+			
+	}		
+  
 			
 			
   });
+			
+function GetGold():int{
+			var inChest=GetSpaceNumber();
+			var toGet=inChest*1;
+			return toGet;
+			}			
+		
+		
+
 } 
     
       
