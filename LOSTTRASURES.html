@@ -48,11 +48,20 @@
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
+	  var port = "anchor.png"
 	  var dead="skull.png";
 	  var nessie="loch ness monster.png";
 	  var noTreasure= "trssur  2.png";
 	  var treasure="trssur chest.png";
-      var myLatLng = new google.maps.LatLng(60.8063888888889,-0.778333333333333);
+	  
+			var myLatLng = new google.maps.LatLng( 57.1425,-2.083);
+      var aberdeen = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+				 icon:port,
+      title:"Aberdeen"
+	});
+      var myLatLng = new google.maps.LatLng(60.8063888888889,-0.778333333333333);	
       var markerOne = new google.maps.Marker({
       position: myLatLng,
       map: map,
@@ -289,11 +298,16 @@ shipMarker.setPosition(newPos);
 			window.location.reload();
 			}
 			}		
-			
+		
 			
 			
 	}		
-  
+  if (google.maps.geometry.spherical.computeDistanceBetween (newPos, aberdeen,6378137)<=5000){
+		var nextCannon= cannon*cannon*10;
+		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]repair the ship for 50 gold.\n3]hire a crew for 20 gold.");
+		
+		
+			}
 			
 			});
 			
