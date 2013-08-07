@@ -305,7 +305,8 @@ shipMarker.setPosition(newPos);
   if (google.maps.geometry.spherical.computeDistanceBetween (newPos, aberdeen.getPosition(),6378137)<=5000){
 		var nextCannon= cannons*cannons*10;
 		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]repair the ship for 50 gold.\n3]hire a crew for 20 gold.You have "+gold+" gold.");
-		if (service= 1){
+		service=parseInt(service); 
+		if (service== 1){
 			if (gold >= nextCannon){
 			gold-=nextCannon;
 			cannons+=1
@@ -317,7 +318,7 @@ shipMarker.setPosition(newPos);
 			
 			
 			}
-		else if(service = 2){
+		else if(service == 2){
 			if (gold>49){
 			gold-=50;
 			hull=50
@@ -334,7 +335,7 @@ shipMarker.setPosition(newPos);
 			
 			
 			}
-		else if (service=3){
+		else if (service==3){
 			if (gold>19){
 			gold-=20;
 			crew=20
