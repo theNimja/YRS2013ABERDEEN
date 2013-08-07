@@ -310,20 +310,21 @@ function RandomNum(high){
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
-	var attack=confirm("You          "+enemyName+"\nHull:"+hull+"          "+enemyHull+"\nCrew:"+crew+"          "+enemyCrew+"\nCannons:"+cannons+"         "+enemyCannons+"\n What will you do? OK=cannons,Cancel=board");
-	if (attack){
+	var attack=prompt("You          "+enemyName+"\nHull:"+hull+"          "+enemyHull+"\nCrew:"+crew+"          "+enemyCrew+"\nCannons:"+cannons+"         "+enemyCannons+"\n What will you do? 1=cannons,2=board");
+	if (attack=1){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
 			
 			
 			for (i= 0;i<enemyCannons;i++){hull-=RandomNum(7);}
 			
 			}
-	else{for (i= 0;i<crew;i++){enemyHull-=RandomNum(7);}
+	else if(attack= 2){for (i= 0;i<crew;i++){enemyHull-=RandomNum(7);}
 			
 			
-			for (i= 0;i<enemyCrew;i++){Hull-=RandomNum(7);}
+			for (i= 0;i<enemyCrew;i++){hull-=RandomNum(7);}
 			
 			}
+	else {alert("what?");}
 			}
 			if (hull<=0){
 			return false;
