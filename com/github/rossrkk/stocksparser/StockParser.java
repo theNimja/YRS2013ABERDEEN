@@ -15,7 +15,7 @@ public class StockParser
 {
     public static void main(String[] args) throws InterruptedException 
     {
-       	while (true) {
+    	while (true) {
         	String[] citys = new String[]{
         			"london",
         			"frankfurt",
@@ -29,7 +29,11 @@ public class StockParser
     	            e.printStackTrace();
     	        }
         	}
-        	}
+        	try {
+        		Thread.sleep(90000);
+        		} catch(InterruptedException e) {
+        		} 
+    	}
     }
 
     private void start(String city) throws Exception
