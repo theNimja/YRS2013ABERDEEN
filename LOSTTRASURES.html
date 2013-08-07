@@ -193,7 +193,7 @@ var myLatLng = new google.maps.LatLng( 56.2477777777778,-5.20222222222222);
 				 icon:treasure,
       title:"OddBlob18"
   });
-var mylatLng = new google.maps.LatLng( 57.3,-4.45);
+var mylatLng = new google.maps.LatLng(57.3,-4.45);
 	var lochNessMonster = new google.maps.Marker({
 		position: myLatLng,
 		map: map,
@@ -225,7 +225,7 @@ var mylatLng = new google.maps.LatLng( 57.3,-4.45);
   });
 var crew =20;
 var hull=50;
-var cannons=100;			
+var cannons=5;			
 var gold=0;
 var efficiency=1;			
 var allWrecks = new Array();
@@ -310,7 +310,7 @@ function RandomNum(high){
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
-	var attack=confirm("You          "+enemyName+"\nHull:"+hull+"          "+enemyHull+"\nCrew:"+crew+"          "+enemyCrew+"\nCannons:"+cannons+"          "+enemyCannons+"\n What will you do? Y=cannons,N=board");
+	var attack=confirm("You          "+enemyName+"\nHull:"+hull+"          "+enemyHull+"\nCrew:"+crew+"          "+enemyCrew+"\nCannons:"+cannons+"         "+enemyCannons+"\n What will you do? OK=cannons,Cancel=board");
 	if (attack){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
 			
@@ -318,10 +318,10 @@ function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 			for (i= 0;i<enemyCannons;i++){hull-=RandomNum(7);}
 			
 			}
-	else{for (i= 0;i<crew;i++){enemyCrew-=RandomNum(7);}
+	else{for (i= 0;i<crew;i++){enemyHull-=RandomNum(7);}
 			
 			
-			for (i= 0;i<enemyCrew;i++){crew-=RandomNum(7);}
+			for (i= 0;i<enemyCrew;i++){Hull-=RandomNum(7);}
 			
 			}
 			}
@@ -336,10 +336,10 @@ function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 
 			
 			}
+			
  
    
-      
-      google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initialize);
 
  
 
