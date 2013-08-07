@@ -306,7 +306,7 @@ shipMarker.setPosition(newPos);
 		var nextCannon= cannons*cannons*10;
 		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]repair the ship for 50 gold.\n3]hire a crew for 20 gold.You have "+gold+" gold.");
 		if (service= 1){
-			if (gold=>nextCannon){
+			if (gold >= nextCannon){
 			gold-=nextCannon;
 			cannons+=1
 			alert("You now have "+ cannons+" cannons.");
@@ -318,28 +318,33 @@ shipMarker.setPosition(newPos);
 			
 			}
 		else if(service = 2){
-			if (gold>=50){
+			if (gold>49){
 			gold-=50;
 			hull=50
 			alert("You now have a fully repaired ship.");
 			
 		
 			}
-		else {alert("You dont have enough gold!");}	
+		else {
+			
+			alert("You dont have enough gold!");
+			}	
 			
 			
 			
 			
 			}
 		else if (service=3){
-			if (gold>=20){
+			if (gold>19){
 			gold-=20;
 			crew=20
 			alert("You now have all your cabins full.");
 			
 		
 			}
-		else {alert("You dont have enough gold!");}	
+		else {
+			alert("You dont have enough gold!");
+			}	
 			
 			
 			
