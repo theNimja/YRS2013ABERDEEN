@@ -225,7 +225,7 @@ var mylatLng = new google.maps.LatLng( 57.3,-4.45);
   });
 var crew =20;
 var hull=50;
-var cannons=6;			
+var cannons=100;			
 var gold=0;
 var efficiency=1;			
 var allWrecks = new Array();
@@ -281,7 +281,7 @@ shipMarker.setPosition(newPos);
 			var result = Battle("Monster",2,100,20);
 			if (result){
 			alert("You beat the monster!");
-			allMonsters[i].setIcon(skull);
+			allMonsters[i].setIcon(dead);
 			allMonsters.splice(i,1);
 			}
 			else{
