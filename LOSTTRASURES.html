@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+		 <title>Captain Swallows Quantum Pirates</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
       html { height: 100% }
@@ -257,8 +258,14 @@ allWrecks[15]=markerSixteen;
 allWrecks[16]=markerSeventeen;
 allWrecks[17]=markerEighteen;	
 var allMonsters=new Array();
-allMonsters[0]=lochNessMonster;			
-			
+allMonsters[0]=lochNessMonster;	
+var pirates = new Array();
+pirates[0]=	 "Jessica Tompkinson";
+pirates[1]=	 "Simon Campbell";
+pirates[2]=	  "Dr Kate Stone";
+pirates[3]=	 "Martine Garland";
+pirates[4]=		 "Marcus Hughes";		
+pirates[5]=		 "Emma Mulqueeny";				
    
  
 
@@ -358,6 +365,9 @@ shipMarker.setPosition(newPos);
 			}	
 			}
 			
+			var event =RandomNum(7);
+		
+			
 			});
 			
 function GetGold(){
@@ -410,7 +420,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
       
     </script>
   </head>
-  <body>
+  <body background="pirate.png" bgcolor="#BADA55">
+		  <form>   
+<h1><p style="color:deepskyblue" align="right">
+Boat Name: <input type="text" name="boatname"><br>
+   Efficiency: <select name="efficiency" style="font-family:verdana;font-size: 16pt;">
+    <option value="london">London</option>
+    <option value="frankfurt">Frankfurt</option>
+    <option value="newyork">New York</option>
+    <option value="tokyo">Tokyo</option>
+    </select><br>
+     <input type="submit" value="Submit">
+  </p></h1>
+   </form> 
     <div id="map-canvas"/>
   </body>
 </html>
