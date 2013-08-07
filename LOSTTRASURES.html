@@ -54,11 +54,11 @@
 	  var noTreasure= "trssur  2.png";
 	  var treasure="trssur chest.png";
 	  
-			var myLatLng = new google.maps.LatLng( 57.1425,-2.083);
+	var myLatLng = new google.maps.LatLng( 57.1425,-2.083);
       var aberdeen = new google.maps.Marker({
       position: myLatLng,
       map: map,
-				 icon:port,
+	  icon:port,
       title:"Aberdeen"
 	});
       var myLatLng = new google.maps.LatLng(60.8063888888889,-0.778333333333333);	
@@ -258,7 +258,7 @@ allWrecks[16]=markerSeventeen;
 allWrecks[17]=markerEighteen;	
 var allMonsters=new Array();
 allMonsters[0]=lochNessMonster;			
-
+			
    
  
 
@@ -302,11 +302,54 @@ shipMarker.setPosition(newPos);
 			
 			
 	}		
-  if (google.maps.geometry.spherical.computeDistanceBetween (newPos, aberdeen,6378137)<=5000){
-		var nextCannon= cannon*cannon*10;
-		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]repair the ship for 50 gold.\n3]hire a crew for 20 gold.");
+  if (google.maps.geometry.spherical.computeDistanceBetween (newPos, aberdeen.getPosition(),6378137)<=5000){
+		var nextCannon= cannons*cannons*10;
+		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]repair the ship for 50 gold.\n3]hire a crew for 20 gold.You have "+gold+" gold.");
+		if (service= 1){
+			if (gold=>nextCannon){
+			gold-=nextCannon;
+			cannons+=1
+			alert("You now have "+ cannons+" cannons.");
+			
 		
+			}
+		else {alert("You dont have enough gold!");}	
+			
+			
+			}
+		else if(service = 2){
+			if (gold>=50){
+			gold-=50;
+			hull=50
+			alert("You now have a fully repaired ship.");
+			
 		
+			}
+		else {alert("You dont have enough gold!");}	
+			
+			
+			
+			
+			}
+		else if (service=3){
+			if (gold>=20){
+			gold-=20;
+			crew=20
+			alert("You now have all your cabins full.");
+			
+		
+			}
+		else {alert("You dont have enough gold!");}	
+			
+			
+			
+			
+			
+			}
+		else{
+			alert ("You did nothing.");
+			
+			}	
 			}
 			
 			});
