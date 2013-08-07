@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+		
 		 <title>Captain Swallows Quantum Pirates</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
@@ -14,7 +15,7 @@
 	
     <script type="text/javascript">
       function initialize() {
-         
+       var playerName= prompt("What is Yar Name?"); 
 
 
           
@@ -55,6 +56,7 @@
 	  var noTreasure= "trssur  2.png";
 	  var treasure="trssur chest.png";
 	  
+	  
 	var myLatLng = new google.maps.LatLng( 57.1425,-2.083);
       var aberdeen = new google.maps.Marker({
       position: myLatLng,
@@ -68,7 +70,7 @@
       map: map,
 	  icon:treasure,
 				  icon:treasure,
-      title:"OddBlob"
+      title:"Amsterdam"
   });
     var myLatLng = new google.maps.LatLng( 60.5463888888889,-1.79388888888889);
       var markerTwo = new google.maps.Marker({
@@ -76,28 +78,28 @@
       map: map,
 	  con:treasure,
 				  icon:treasure,
-      title:"OddBlob2"
+      title:"Anne"
   });
           var myLatLng = new google.maps.LatLng(60.25,-1.15);
       var markerThree = new google.maps.Marker({
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob3"
+      title:"Thistlegorm"
   });
           var myLatLng = new google.maps.LatLng(60.2008333333333,-1.6);
       var markerFour = new google.maps.Marker({
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob4"
+      title:"Sweepstake"
   });
           var myLatLng = new google.maps.LatLng(60.1841666666667, -1.51666666666667);
       var markerFive = new google.maps.Marker({
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob5"
+      title:"Black Swan"
   });
 
           var myLatLng = new google.maps.LatLng(60.0338888888889,-1.20194444444444);
@@ -105,7 +107,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob6"
+      title:"General Slocum"
   });
 
           var myLatLng = new google.maps.LatLng(60.1516666666667, -1.13527777777778);
@@ -113,7 +115,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob7"
+      title:"SS Sultana"
   });
 
           var myLatLng = new google.maps.LatLng( 60.0338888888889, -1.20194444444444);
@@ -121,7 +123,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob8"
+      title:"SS Mount-Blanc"
   });
 
           var myLatLng = new google.maps.LatLng(60.0,-1.41666666666667);
@@ -129,7 +131,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob9"
+      title:"SS Imo"
   });
 
       var myLatLng = new google.maps.LatLng(59.25,-2.41666666666667);
@@ -230,14 +232,15 @@ var mylatLng = new google.maps.LatLng(57.3,-4.45);
     var shipMarker = new google.maps.Marker({
       position: shipPos,
       map: map,
-      title:"You",
+      title:playerName,
 	  icon:player
   });
+
 var crew =20;
 var hull=50;
 var cannons=5;			
 var gold=0;
-var efficiency=1;			
+var efficiency=0;			
 var allWrecks = new Array();
 allWrecks[0]=markerOne;
 allWrecks[1]=markerTwo;
@@ -265,7 +268,8 @@ pirates[1]=	 "Simon Campbell";
 pirates[2]=	  "Dr Kate Stone";
 pirates[3]=	 "Martine Garland";
 pirates[4]=		 "Marcus Hughes";		
-pirates[5]=		 "Emma Mulqueeny";				
+pirates[5]=		 "Emma Mulqueeny";	
+pirates[6]=		 "Ben Nunney";			
    
  
 
@@ -365,14 +369,51 @@ shipMarker.setPosition(newPos);
 			}	
 			}
 			
-			var event =RandomNum(7);
-		
+			var event =RandomNum(9);
+			switch(event){
+			case 1:
+			var risk;
+			while (risk!=1 || risk !=2){
+			risk = prompt("A crewman has fallen ill.What do you do?\n1]Chuck him overboard\n2]Keep him on.");
+			risk=parseInt(risk);
+			switch (risk){
+			case 1:
+				crew-=1;
+			case 2:
+			if (RandomNum(3)=2){
+			crew-=1;
+			}
+			else{
+			crew-=2;
+			}
+			default:
+			alert("enter a number!");
+			}
+			
+			}
+			case 2:
+			var pirate = pirates[RandomNum(pirates.length)];
+			alert(pirate+" has found you and is coming for you!")
+			var result = Battle(pirate,RandomNum(11),RandomNum(201),RandomNum(36));
+			if (result){
+			toGetGold=GetGold();
+			gold+=toGetGold;
+			alert("You beat "+pirate+"!\nYou found "+pirate+"'s stash of "+toGetGold+" gold! \nYou now have "+gold+"gold." );
+			}
+			else{
+			alert("Thou art dead,killed by "+pirate+".");
+			window.location.reload();
+			}
+			//more events
+			default:
+			
+			}
 			
 			});
 			
 function GetGold(){
 			var inChest=RandomNum(301);
-			var toGet=inChest*1;
+			var toGet=inChest;
 			return toGet;
 			}			
 		
@@ -383,15 +424,15 @@ function RandomNum(high){
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
-	var attack=prompt("You          "+enemyName+"\nHull:"+hull+"          "+enemyHull+"\nCrew:"+crew+"          "+enemyCrew+"\nCannons:"+cannons+"         "+enemyCannons+"\n What will you do? 1=cannons,2=board");
-	if (attack=1){
+	var attack=prompt(playerName+"          "+enemyName+"\nHull:"+hull+"          "+enemyHull+"\nCrew:"+crew+"          "+enemyCrew+"\nCannons:"+cannons+"         "+enemyCannons+"\n What will you do? 1=cannons,2=board");
+	if (attack==1){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
 			
 			
 			for (i= 0;i<enemyCannons;i++){hull-=RandomNum(7);}
 			
 			}
-	else if(attack= 2){for (i= 0;i<crew;i++){enemyHull-=RandomNum(7);}
+	else if(attack==2){for (i= 0;i<crew;i++){enemyHull-=RandomNum(7);}
 			
 			
 			for (i= 0;i<enemyCrew;i++){hull-=RandomNum(7);}
@@ -409,7 +450,11 @@ function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	}
 
 			
+			
 			}
+			
+		
+			
 			
  
    
@@ -420,10 +465,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
       
     </script>
   </head>
-  <body background="pirate.png" bgcolor="#BADA55">
-		  <form>   
+  <body background="pirate.png" bgcolor="#6633ff">
+		  <form name="Info" onsubmit="SetForm()">   
 <h1><p style="color:deepskyblue" align="right">
-Boat Name: <input type="text" name="boatname"><br>
    Efficiency: <select name="efficiency" style="font-family:verdana;font-size: 16pt;">
     <option value="london">London</option>
     <option value="frankfurt">Frankfurt</option>

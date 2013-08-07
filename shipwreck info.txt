@@ -1,0 +1,127 @@
+boat name:Amsterdam
+year:1749
+Place:Bulverhythe
+how many died: 50 out of 330 died of plague, 40 more got ill
+what happened:High tide the crew seem to have mutinied and many got drunk
+
+boat name:Anne,Nederland
+year:1690
+Place:
+how many died: 
+what happend:damage by the french navy, the captain set the ship on fire so the french
+             won't take her as the french prize
+
+boat name:Thistlegorm,british
+year:1941 found in 1956
+Place:red sea
+how many died: 
+what happend:was sunk by a German bomb on it's way o Alexandria 
+             carrying guns, bombs and ammunition
+
+boat name:Sweepstake
+year:1885
+Place:Otario lake
+how many died: 
+what happend:Despit sinking she still holds an attraction for tourists and divers 
+             alike as she shimmers in the blue water
+
+boat name:Black Swan, 
+year:1804
+Place:off the coast of portugal
+how many died: 
+what happend:a project involvs the largest treasure largest at sea.They recovered 500,000
+             gold and silver worth approximatley $254 million!
+
+boat name:Pearl harbour of ships 
+year:1941
+place:Hawaii
+how many died:2,400
+what happened:Over 300 planes bombed the harbour area in a suprise attack
+
+boat name:The RMS Lisitania
+year:May 1, 1915
+place:Queens town
+how many die:nearly 2,000
+what happened: It was struck by a German torpedo and consequently 
+               sank within 18 minutes of being hit. 
+
+boat name:Titanic
+year:april 1912
+place:North atlantic Ocean
+how many died:1,522 people were lost at sea
+what happened:the ship later struck an iceberg than sank about 
+              350 miles southeast of newfoundland
+
+boat name:ss Eastender
+year:July 24th 1915
+place:from Chicago
+how many died: Hundreds were killed either by drowning as they were trapped inside the ship,
+               or by being crushed by pianos and other heavy furniture.   
+what happened: When too many passengers rushed to the port side, on that day, 
+               the entire ship rolled over.
+
+boat name:MS Estonia
+year:September 28th, 1994
+place:left sweden
+how many died:so the of the 989 passengers, the only ones who survived 
+              were those who were already on the decks.
+what happened:the massive bow doors of the ship not being properly closed and a 
+              flood of water came rushing into the cabin
+
+boat name:RMS Empressof Irland
+year:May 28th, 1914
+place:left Canada
+how many died:144
+what happened:The dense fog of the early morning hours was blamed for the crash.
+              Sadly, only 4 children of the 148 on board survived the accident.
+
+boat name:General Slocum
+year:june 1st 1909
+place:Germany
+how many died:
+what happened:A fire started not long after the ship set off, but the captain only realized 
+              what was happening 10 minutes after the blaze had started.12 year old boy 
+              tried to warn him but he wouldn't listen
+
+boat name:SS Sultana
+year:April 27th, 1865
+place:US
+how many died:
+what happened:Three of the steamboat’s boilers exploded. The passengers that survived the
+              initial blast, had to decide whether to risk staying on the burning ship,
+              or entering the freezing water.
+
+boat name:Fort Mercer
+year:February 18th, 1952
+place:Southeast of nantucket
+how many died:
+what happened:The ship broke in half
+
+boat name:MV Le Joola
+year:September 22nd, 2006
+place:8
+how many died:around 1,860
+what happened:built to carry around 500 passengers but over 2,000 people were abrad 
+              bad weather most people survived but died while waiting for help.
+
+boat name:SS Mount-Blanc 
+year: September 6th, 1917
+place:Canada
+how many died:2,000
+what happened:was collided with SS Imo  loaded with explosives, and caught fire 
+              immediately after the collision.
+              Twenty-five minutes later, the ship blew up.
+
+boat name:SS Kiangya
+year:December 4th, 1948
+place:north of Shanghai
+how many died:3,900
+what happened:ship carrying mostly Chinese refugees hit a Japanese mine left over
+              from world war 2
+
+boat name:KMP Tampomas II
+year: 27 January, 1981
+place:Java Sea
+how many died:431 
+what happened: There was 191 cars and 200 motorbikes on the ship. Big waves created 
+               sparks among the vehicles and cause fire
