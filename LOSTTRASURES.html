@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-		
+
 		 <title>Captain Swallows Quantum Pirates</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
@@ -12,7 +12,7 @@
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?libraries=geometry,key=AIzaSyC9rwi7hwI8oeUF2rdUdVEzRmZZJvAq-MQ&sensor=false">
     </script>
-	
+
     <script type="text/javascript">
       function initialize() {
        var playerName= prompt("What is Yar Name?"); 
@@ -55,8 +55,9 @@
 	  var nessie="loch ness monster.png";
 	  var noTreasure= "trssur  2.png";
 	  var treasure="trssur chest.png";
-	  
-	  
+	  var dragon ="colourful nessy.png"
+
+
 	var myLatLng = new google.maps.LatLng( 57.1425,-2.083);
       var aberdeen = new google.maps.Marker({
       position: myLatLng,
@@ -181,7 +182,7 @@
 				  icon:treasure,
       title:"OddBlob15"
   });
-			
+
 	var myLatLng = new google.maps.LatLng(55.9166666666667,-1.93333333333333);
       var markerSixteen = new google.maps.Marker({
       position: myLatLng,
@@ -189,7 +190,7 @@
 				  icon:treasure,
       title:"OddBlob16"
   });
-			
+
 var myLatLng = new google.maps.LatLng(56.8480555555556,-6.8175);
       var markerSeventeen = new google.maps.Marker({
       position: myLatLng,
@@ -197,7 +198,7 @@ var myLatLng = new google.maps.LatLng(56.8480555555556,-6.8175);
 				 icon:treasure,
       title:"OddBlob17"
   });
-			
+
 var myLatLng = new google.maps.LatLng( 56.2477777777778,-5.20222222222222);
       var markerEighteen = new google.maps.Marker({
       position: myLatLng,
@@ -205,24 +206,33 @@ var myLatLng = new google.maps.LatLng( 56.2477777777778,-5.20222222222222);
 				 icon:treasure,
       title:"OddBlob18"
   });
-var mylatLng = new google.maps.LatLng(57.3,-4.45);
+var myLatLng = new google.maps.LatLng(57.3,-4.45);
 	var lochNessMonster = new google.maps.Marker({
 		position: myLatLng,
 		map: map,
 		icon: nessie,
 		title: "Here Be Monsters"	
-			
-			
-  });			
-			
-	
-			
-			
-			
-			
 
-			
-			
+
+  });	
+var myLatLng = new google.maps.LatLng(56.2852777777778,-3.25);
+	var dragon = new google.maps.Marker({
+		position: myLatLng,
+		map: map,
+		icon: dragon,
+		title: "Here Be Monsters"	
+
+
+  });			
+
+
+
+
+
+
+
+
+
 
 
  
@@ -261,7 +271,8 @@ allWrecks[15]=markerSixteen;
 allWrecks[16]=markerSeventeen;
 allWrecks[17]=markerEighteen;	
 var allMonsters=new Array();
-allMonsters[0]=lochNessMonster;	
+allMonsters[0]=lochNessMonster;
+allMonsters[1]=dragon;			
 var pirates = new Array();
 pirates[0]=	 "Jessica Tompkinson";
 pirates[1]=	 "Simon Campbell";
@@ -281,22 +292,22 @@ var newPos =event.latLng;
 shipMarker.setPosition(newPos);
 
 	for (var i =0;i<allWrecks.length;i++){
-			
-	
+
+
 		if (google.maps.geometry.spherical.computeDistanceBetween (newPos, allWrecks[i].getPosition(),6378137)<=500){
 			var toGetGold=GetGold();
 			gold+=toGetGold;
 			alert("You found the treasure of the "+ allWrecks[i].getTitle()+"\nIt had "+toGetGold + " gold in it.\nYou now have "+gold+" gold.");
-			
+
 			allWrecks[i].setIcon(noTreasure);
 			allWrecks.splice(i,1);
 			}
 			}
 		for (var i =0;i<allMonsters.length;i++){
-			
+
 		if (google.maps.geometry.spherical.computeDistanceBetween (newPos, allMonsters[i].getPosition(),6378137)<=500){
-			
-			
+
+
 			alert("You are bieng attacked by a monster!");
 			var result = Battle("Monster",2,100,20);
 			if (result){
@@ -309,12 +320,12 @@ shipMarker.setPosition(newPos);
 			window.location.reload();
 			}
 			}		
-		
-			
-			
+
+
+
 	}		
   if (google.maps.geometry.spherical.computeDistanceBetween (newPos, aberdeen.getPosition(),6378137)<=5000){
-		var nextCannon= cannons*cannons*10;
+		var nextCannon= cannons*cannons*5;
 		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]reinforce the ship for 50 gold.\n3]hire crew for 20 gold.You have "+gold+" gold.");
 		service=parseInt(service); 
 		if (service== 1){
@@ -322,75 +333,59 @@ shipMarker.setPosition(newPos);
 			gold-=nextCannon;
 			cannons+=1
 			alert("You now have "+ cannons+" cannons.");
-			
-		
+
+
 			}
 		else {alert("You dont have enough gold!");}	
-			
-			
+
+
 			}
 		else if(service == 2){
-			if (gold>49){
-			gold-=50;
+			if (gold>74){
+			gold-=75;
 			hull+=25;
-			alert("You now have rienforced your ship.\nIt has "+hull+" hull.");
-			
-		
+			alert("You now have reinforced your ship.\nIt has "+hull+" hull.");
+
+
 			}
 		else {
-			
+
 			alert("You dont have enough gold!");
 			}	
-			
-			
-			
-			
+
+
+
+
 			}
 		else if (service==3){
 			if (gold>19){
 			gold-=20;
-			crew=20
+			crew+=
 			alert("You have hired 5 extra men.\nYou now have "+crew+" crew.");
-			
-		
+
+
 			}
 		else {
 			alert("You dont have enough gold!");
 			}	
-			
-			
-			
-			
-			
+
+
+
+
+
 			}
 		else{
 			alert ("You did nothing.");
-			
+
 			}	
 			}
-			
+
 			var event =RandomNum(9);
 			switch(event){
 			case 1:
-			var risk;
-			while (risk!=1 || risk !=2){
-			risk = prompt("A crewman has fallen ill.What do you do?\n1]Chuck him overboard\n2]Keep him on.");
-			risk=parseInt(risk);
-			switch (risk){
-			case 1:
-				crew-=1;
-			case 2:
-			if (RandomNum(3)=2){
-			crew-=1;
-			}
-			else{
-			crew-=2;
-			}
-			default:
-			alert("enter a number!");
-			}
+	
+
 			
-			}
 			case 2:
 			var pirate = pirates[RandomNum(pirates.length)];
 			alert(pirate+" has found you and is coming for you!")
@@ -398,7 +393,7 @@ shipMarker.setPosition(newPos);
 			if (result){
 			toGetGold=GetGold();
 			gold+=toGetGold;
-			alert("You beat "+pirate+"!\nYou found "+pirate+"'s stash of "+toGetGold+" gold! \nYou now have "+gold+"gold." );
+			alert("You beat "+pirate+"!\nYou found "+pirate+"'s stash of "+toGetGold+" gold! \nYou now have "+gold+" gold." );
 			}
 			else{
 			alert("Thou art dead,killed by "+pirate+".");
@@ -406,37 +401,37 @@ shipMarker.setPosition(newPos);
 			}
 			//more events
 			default:
-			
+
 			}
-			
+
 			});
-			
+
 function GetGold(){
 			var inChest=RandomNum(301);
 			var toGet=inChest;
 			return toGet;
 			}			
-		
+
 function RandomNum(high){
 	var randomNumber=Math.floor(Math.random()*high);
 	return randomNumber;
-			
+
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
 	var attack=prompt(playerName+"          "+enemyName+"\nHull:"+hull+"                 "+enemyHull+"\nCrew:"+crew+"                 "+enemyCrew+"\nCannons:"+cannons+"                "+enemyCannons+"\n What will you do? \n1=cannons,\n2=board.");
 	if (attack==1){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
-			
-			
+
+
 			for (i= 0;i<enemyCannons;i++){hull-=RandomNum(7);}
-			
+
 			}
 	else if(attack==2){for (i= 0;i<crew;i++){enemyHull-=RandomNum(7);}
-			
-			
+
+
 			for (i= 0;i<enemyCrew;i++){hull-=RandomNum(7);}
-			
+
 			}
 	else {alert("what?");}
 			}
@@ -444,24 +439,16 @@ function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 			return false;
 			}
 			else{
-			
+
 			return true;
 			}
 	}
 
-function Summary(){
-		alert("Name:"+playerName+"\nGold:"+gold+"\nShip Hull:"+hull+"\nCrew:"+crew+"\nShip Cannons:"+cannons);
-		return 0;	
-			
-			
-			
-		}		
-			
 			}
-			
-		
-			
-			
+
+
+
+
  
    
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -471,7 +458,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       
     </script>
   </head>
-	<button type="button" onclick = "Summary()" > Summary </button>
+
   <body background="pirate.png" bgcolor="#6633ff">
 		  <form name="Info" onsubmit="SetForm()">   
 <h1><p style="color:deepskyblue" align="right">
