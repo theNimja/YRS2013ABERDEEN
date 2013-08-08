@@ -360,7 +360,7 @@ shipMarker.setPosition(newPos);
 		else if (service==3){
 			if (gold>19){
 			gold-=20;
-			crew+=
+			crew+=5;
 			alert("You have hired 5 extra men.\nYou now have "+crew+" crew.");
 
 
@@ -419,7 +419,7 @@ function RandomNum(high){
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
-	var attack=prompt(playerName+"          "+enemyName+"\nHull:"+hull+"                 "+enemyHull+"\nCrew:"+crew+"                 "+enemyCrew+"\nCannons:"+cannons+"                "+enemyCannons+"\n What will you do? \n1=cannons,\n2=board.");
+	var attack=prompt(playerName+"          "+enemyName+"\nHull:"+hull+"                 "+enemyHull+"\nCrew:"+crew+"                 "+enemyCrew+"\nCannons:"+cannons+"                "+enemyCannons+"\n What will you do? \n1=fire cannons,\n2=board the ship.");
 	if (attack==1){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
 
