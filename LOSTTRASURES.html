@@ -380,7 +380,7 @@ shipMarker.setPosition(newPos);
 			}	
 			}
 
-			var event =RandomNum(9);
+			var event =RandomNum(13);
 			switch(event){
 			case 1:
 			var pirate = pirates[RandomNum(pirates.length)];
@@ -399,45 +399,8 @@ shipMarker.setPosition(newPos);
 			
 		
 			
-			case 2:
-			var risk;
-			
-			while (risk !=1 && !=2 ){
-			risk = prompt("The sea is rough. do you dare brave it? \n1]yes\n2]no");
-			}
-			switch (risk){
-				case 1:
-				var chance = RandomNum(2);
-				if (chance==1){
-				alert("Your ship was damaged");
-				hull-=4
-				if (hull<1){
-			alert("Thou art dead");
-			window.location.reload();}
-			} 
-			else{
-			var toGetGold=GetGold();
-			gold+=toGetGold;
-			alert(toGetGold" gold washed onto your deck! You have "+gold +" gold.");
-			
-			}
-				case 2:
 			
 			
-			}
-			case 3:
-			while (risk !=1 && !=2 ){
-			risk = prompt("You found in island! Do you want to explore it? \n1]yes\n2]no");
-			}
-			if(risk==1){
-			var died=RandomNum(11);
-			var toGetGold=GetGold();
-			gold+=toGetGold;
-			alert(died+" crew were killed, but you found "+gold+" gold!\nYou have "+gold+" gold.")
-			if (crew<0){crew=0}
-			
-			}
-			else{}
 			default:
 
 			}
