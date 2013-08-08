@@ -15,6 +15,9 @@
 
     <script type="text/javascript">
       function initialize() {
+
+	  var stock = stockParser.getValue();
+	  alert(stock);
        var playerName= prompt("What is Yar Name?"); 
 
 
@@ -466,5 +469,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <body background="pirate.png" bgcolor="#6633ff">
 
     <div id="map-canvas"/>
+	<script src="http://www.java.com/js/deployJava.js"></script>
+    <script>
+        <!-- applet id can be used to get a reference to the applet object -->
+        var attributes = { id:'stockParser', code:'com.github.rossrkk.stocksparser.StockParser', width:1, height:1} ;
+        var parameters = {jnlp_href: 'StockParser.jnlp'} ;
+        deployJava.runApplet(attributes, parameters, '1.7');
+    </script>
   </body>
 </html>
