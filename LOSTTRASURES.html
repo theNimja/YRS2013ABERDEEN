@@ -15,7 +15,7 @@
 
     <script type="text/javascript">
       function initialize() {
-       var playerName= prompt("What is Yar Name?"); 
+        
 
 
           
@@ -246,10 +246,7 @@ var myLatLng = new google.maps.LatLng(56.2852777777778,-3.25);
 	  icon:player
   });
 
-var crew =20;
-var hull=50;
-var cannons=5;			
-var gold=0;
+
 var efficiency=0;			
 var allWrecks = new Array();
 allWrecks[0]=markerOne;
@@ -380,7 +377,7 @@ shipMarker.setPosition(newPos);
 			}	
 			}
 
-			var event =RandomNum(9);
+			var event =RandomNum(13);
 			switch(event){
 			case 1:
 	
@@ -393,10 +390,10 @@ shipMarker.setPosition(newPos);
 			if (result){
 			toGetGold=GetGold();
 			gold+=toGetGold;
-			alert("You beat "+pirate+"!\nYou found "+pirate+"'s stash of "+toGetGold+" gold! \nYou now have "+gold+" gold." );
+			alert("You beat "+pirate+"!\nYou found "+<b>pirate</b>+"'s stash of "+toGetGold+" gold! \nYou now have "+gold+" gold." );
 			}
 			else{
-			alert("Thou art dead,killed by "+pirate+".");
+			alert("Thou art dead,killed by "+<b>pirate</b>+".");
 			window.location.reload();
 			}
 			//more events
@@ -408,6 +405,7 @@ if (!allMonsters && !allWrecks){
 
 window.location = "victory.html"			
 			}
+			
 			});
 
 function GetGold(){
@@ -423,7 +421,7 @@ function RandomNum(high){
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
-	var attack=prompt(playerName+"          "+enemyName+"\nHull:"+hull+"                 "+enemyHull+"\nCrew:"+crew+"                 "+enemyCrew+"\nCannons:"+cannons+"                "+enemyCannons+"\n What will you do? \n1=fire cannons,\n2=board the ship.");
+	var attack=prompt(<b>playerName</b>+"          "+<b>enemyName</b>+"\nHull: "+hull+"                 "+enemyHull+"\nCrew: "+crew+"                 "+enemyCrew+"\nCannons: "+cannons+"                "+enemyCannons+"\nWhat will you do? \n1=fire cannons,\n2=board the ship.");
 	if (attack==1){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
 
@@ -447,7 +445,7 @@ function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 			return true;
 			}
 	}
-
+			
 			}
 
 
@@ -464,7 +462,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </head>
 
   <body background="pirate.png" bgcolor="#6633ff">
+<script>
+var playerName= prompt("What is Yar Name?");
+var crew =20;
+var hull=50;
+var cannons=5;			
+var gold=0;			
+function DisplayStats(){
+			
+			alert("Name: "+<b>playerName+"\nGold: "+gold+"\nCrew "+crew+"\nCannons: "+cannons+"Hull "+hull);			
+			
+			}
 
+</script>	
+<button onclick="DisplayStats()"> Summary </button>				
     <div id="map-canvas"/>
   </body>
 </html>
