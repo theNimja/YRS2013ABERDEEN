@@ -139,7 +139,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob10"
+      title:"Griffin"
   });
 
                 var myLatLng = new google.maps.LatLng(59.5508333333333,-1.65);
@@ -147,7 +147,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob11"
+      title:"Batavia"
   });
 
       var myLatLng = new google.maps.LatLng(59.25,-2.08333333333333);
@@ -155,7 +155,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob12"
+      title:"Sparrow Hawk"
   });
 
     var myLatLng = new google.maps.LatLng( 58.5258333333333,-5.56305555555556);
@@ -163,7 +163,7 @@
       position: myLatLng,
       map: map,
 				  icon:treasure,
-      title:"OddBlob13"
+      title:"Eagle"
   });
 
       var myLatLng = new google.maps.LatLng(60.4177777777778, -2.39222222222222);
@@ -315,7 +315,7 @@ shipMarker.setPosition(newPos);
 	}		
   if (google.maps.geometry.spherical.computeDistanceBetween (newPos, aberdeen.getPosition(),6378137)<=5000){
 		var nextCannon= cannons*cannons*10;
-		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]repair the ship for 50 gold.\n3]hire a crew for 20 gold.You have "+gold+" gold.");
+		var service = prompt("You arrive in a port. Which service do you want ? \n1]get a new cannon for " +nextCannon+" gold.\n2]reinforce the ship for 50 gold.\n3]hire crew for 20 gold.You have "+gold+" gold.");
 		service=parseInt(service); 
 		if (service== 1){
 			if (gold >= nextCannon){
@@ -332,8 +332,8 @@ shipMarker.setPosition(newPos);
 		else if(service == 2){
 			if (gold>49){
 			gold-=50;
-			hull=50
-			alert("You now have a fully repaired ship.");
+			hull+=25;
+			alert("You now have rienforced your ship.\nIt has "+hull+" hull.");
 			
 		
 			}
@@ -350,7 +350,7 @@ shipMarker.setPosition(newPos);
 			if (gold>19){
 			gold-=20;
 			crew=20
-			alert("You now have all your cabins full.");
+			alert("You have hired 5 extra men.\nYou now have "+crew+" crew.");
 			
 		
 			}
@@ -424,7 +424,7 @@ function RandomNum(high){
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
-	var attack=prompt(playerName+"          "+enemyName+"\nHull:"+hull+"          "+enemyHull+"\nCrew:"+crew+"          "+enemyCrew+"\nCannons:"+cannons+"         "+enemyCannons+"\n What will you do? 1=cannons,2=board");
+	var attack=prompt(playerName+"          "+enemyName+"\nHull:"+hull+"                 "+enemyHull+"\nCrew:"+crew+"                 "+enemyCrew+"\nCannons:"+cannons+"                "+enemyCannons+"\n What will you do? \n1=cannons,\n2=board.");
 	if (attack==1){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
 			
@@ -449,7 +449,13 @@ function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 			}
 	}
 
+function Summary(){
+		alert("Name:"+playerName+"\nGold:"+gold+"\nShip Hull:"+hull+"\nCrew:"+crew+"\nShip Cannons:"+cannons);
+		return 0;	
 			
+			
+			
+		}		
 			
 			}
 			
@@ -465,6 +471,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       
     </script>
   </head>
+	<button type="button" onclick = "Summary()" > Summary </button>
   <body background="pirate.png" bgcolor="#6633ff">
 		  <form name="Info" onsubmit="SetForm()">   
 <h1><p style="color:deepskyblue" align="right">
