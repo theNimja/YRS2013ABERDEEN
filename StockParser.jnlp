@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="" href="StockParser.jnlp">
+    <information>
+        <title>StockParser</title>
+        <vendor>Team Quantum Granite</vendor>
+    </information>
+	<resources>
+        <!-- Application Resources -->
+        <j2se version="1.7+"
+              href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="StockParser.jar" main="true" />
+
+    </resources>
+    <applet-desc 
+         name="Stock Parser"
+         main-class="com.github.rossrkk.stocksparser.StockParser"
+         width="1"
+         height="1">
+     </applet-desc>
+     <update check="background"/>
+</jnlp>

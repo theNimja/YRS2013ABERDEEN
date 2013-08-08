@@ -15,7 +15,10 @@
 
     <script type="text/javascript">
       function initialize() {
-        
+
+
+	  
+
 
 
           
@@ -380,22 +383,22 @@ shipMarker.setPosition(newPos);
 			var event =RandomNum(13);
 			switch(event){
 			case 1:
-	
-
-			
-			case 2:
 			var pirate = pirates[RandomNum(pirates.length)];
 			alert(pirate+" has found you and is coming for you!")
 			var result = Battle(pirate,RandomNum(11),RandomNum(201),RandomNum(36));
 			if (result){
 			toGetGold=GetGold();
 			gold+=toGetGold;
-			alert("You beat "+pirate+"!\nYou found "+<b>pirate</b>+"'s stash of "+toGetGold+" gold! \nYou now have "+gold+" gold." );
+			alert("You beat "+pirate+"!\nYou found "+pirate+"'s stash of "+toGetGold+" gold! \nYou now have "+gold+" gold." );
 			}
 			else{
-			alert("Thou art dead,killed by "+<b>pirate</b>+".");
+			alert("Thou art dead,killed by"+pirate+".");
 			window.location.reload();
 			}
+
+			
+		
+			
 			//more events
 			default:
 
@@ -421,7 +424,7 @@ function RandomNum(high){
 	}		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
-	var attack=prompt(<b>playerName</b>+"          "+<b>enemyName</b>+"\nHull: "+hull+"                 "+enemyHull+"\nCrew: "+crew+"                 "+enemyCrew+"\nCannons: "+cannons+"                "+enemyCannons+"\nWhat will you do? \n1=fire cannons,\n2=board the ship.");
+	var attack=prompt(""+playerName+"          "+enemyName+"\nHull: "+hull+"                 "+enemyHull+"\nCrew: "+crew+"                 "+enemyCrew+"\nCannons: "+cannons+"                "+enemyCannons+"\nWhat will you do? \n1=fire cannons,\n2=board the ship.");
 	if (attack==1){
 			for (i= 0;i<cannons;i++){enemyHull-=RandomNum(7);}
 
@@ -470,12 +473,13 @@ var cannons=5;
 var gold=0;			
 function DisplayStats(){
 			
-			alert("Name: "+<b>playerName+"\nGold: "+gold+"\nCrew "+crew+"\nCannons: "+cannons+"Hull "+hull);			
+			alert("Name: "+playerName+"\nGold: "+gold+"\nCrew "+crew+"\nCannons: "+cannons+"Hull "+hull);			
 			
 			}
 
 </script>	
 <button onclick="DisplayStats()"> Summary </button>				
     <div id="map-canvas"/>
+	
   </body>
 </html>

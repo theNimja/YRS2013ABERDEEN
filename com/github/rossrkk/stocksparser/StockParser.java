@@ -1,7 +1,7 @@
 package com.github.rossrkk.stocksparser;
 
+import java.applet.Applet;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -11,11 +11,13 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-public class StockParser
+public class StockParser extends Applet
 {
+	public double out;
+	
     public static void main(String[] args) throws InterruptedException 
     {
-    	while (true) {
+    	/*while (true) {
         	String[] citys = new String[]{
         			"london",
         			"frankfurt",
@@ -24,7 +26,7 @@ public class StockParser
         	};
         	for (int i = 0; i < citys.length; i ++) {
     	        try {
-    	            new StockParser().start(citys[i]);
+    	            new StockParser().start(/*citys[i]);
     	        } catch (Exception e) {
     	            e.printStackTrace();
     	        }
@@ -34,32 +36,53 @@ public class StockParser
         		} catch(InterruptedException e) {
         		} 
     	}
+    	*/
     }
+    
+	public String city;
 
-    private void start(String city) throws Exception
+    @Override
+    public void init(/*String city*/) //throws Exception
     {
-    	
-    	
-        URL url = new URL("https://spreadsheets.google.com/feeds/list/0AgoGEsvdq-VLdFpDNlk0SHNEYlRiekJuVVdCOXFmRFE/od6/public/basic?sq=city=" + city);
+    	getValue();
+    }
+    
+    public double getValue() {
+    	double value = this.getStock("london");
+    	System.out.println(out);
+    	return value;
+    }
+    
+    public double getStock(String city) {
+
+        URL url;
+		try {
+			url = new URL("https://spreadsheets.google.com/feeds/list/0AgoGEsvdq-VLdFpDNlk0SHNEYlRiekJuVVdCOXFmRFE/od6/public/basic?sq=city=" + city);
+		
         URLConnection connection = url.openConnection();
 
         Document doc = parseXML(connection.getInputStream());
         NodeList descNodes = doc.getElementsByTagName("content");
 
-        for(int i=0; i<descNodes.getLength();i++) {
+        for(int i=0; i<descNodes.getLength(); i++) {
             String content = descNodes.item(i).getTextContent();
             int length = content.length();
             int start = content.lastIndexOf(":");
-            double out = Double.parseDouble(content.substring(start + 2, length));
-            System.out.println(out);
-            PrintWriter fileOut = new PrintWriter("stocks" + city + ".txt");
-            fileOut.println(out);
-            fileOut.close();
+            out = Double.parseDouble(content.substring(start + 2, length));
+            //System.out.println(out);
+            //PrintWriter fileOut = new PrintWriter("stocks" + city + ".txt");
+            //fileOut.println(out);
+            //fileOut.close();;
+            return out;
         }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return out;
     }
 
-    private Document parseXML(InputStream stream)
-    throws Exception
+    public Document parseXML(InputStream stream)
+    //throws Exception
     {
         DocumentBuilderFactory objDocumentBuilderFactory = null;
         DocumentBuilder objDocumentBuilder = null;
@@ -73,7 +96,11 @@ public class StockParser
         }
         catch(Exception ex)
         {
-            throw ex;
+            try {
+				throw ex;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
         }       
         return doc;
     }
