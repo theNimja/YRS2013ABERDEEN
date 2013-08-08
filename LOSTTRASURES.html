@@ -360,7 +360,7 @@ shipMarker.setPosition(newPos);
 		else if (service==3){
 			if (gold>19){
 			gold-=20;
-			crew+=5;
+			crew=crew+5;
 			alert("You have hired 5 extra men.\nYou now have "+crew+" crew.");
 
 
@@ -403,7 +403,11 @@ shipMarker.setPosition(newPos);
 			default:
 
 			}
+if (!allMonsters && !allWrecks){
 
+
+//win			
+			}
 			});
 
 function GetGold(){
