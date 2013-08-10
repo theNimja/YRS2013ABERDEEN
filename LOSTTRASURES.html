@@ -14,6 +14,38 @@
     </script>
 
     <script type="text/javascript">
+		
+		var quantumData = [203, 24, 213, 239, 120, 43, 36, 65, 160, 164, 121, 98, 138, 158, 209, 232, 174, 242, 162, 160, 82, 35, 218, 33, 27, 33, 239, 146, 17, 212, 189, 196, 30, 69, 248, 103, 84, 11, 174, 169, 2, 11, 194, 87, 67, 97, 88, 111, 83, 121];
+        var stockdata = [ 53.71,
+18.4700000000003,
+-93,
+-15.3699999999999,
+-28.29,
+-34.1099999999997,
+60.9199999999992,
+50.1100000000006,
+10.6999999999998,
+5.46000000000004,
+-33.1599999999999,
+-32.4800000000005,
+22.9900000000007,
+-25.7300000000005,
+-7.5,
+-3.6899999999996,
+62.4299999999994,
+15.5799999999999,
+-29.7599999999993,
+41.1700000000001,
+1.52999999999975,
+38.4499999999998,
+-8.11999999999989,
+63.0100000000002,
+74.5499999999993,
+-46.1499999999996,
+191.8,
+-74.0699999999997,
+-3.84000000000015,
+92.3099999999995];
       function initialize() {
 
 
@@ -249,8 +281,8 @@ var myLatLng = new google.maps.LatLng(56.2852777777778,-3.25);
 	  icon:player
   });
 
-
-var efficiency=0;			
+var randObj = Math.floor(Math.random()*31)
+var efficiency= stockdata[randObj];			
 var allWrecks = new Array();
 allWrecks[0]=markerOne;
 allWrecks[1]=markerTwo;
@@ -413,15 +445,21 @@ window.location = "victory.html"
 
 function GetGold(){
 			var inChest=RandomNum(301);
-			var toGet=inChest;
-			return toGet;
+			return inChest;
 			}			
 
 function RandomNum(high){
-	var randomNumber=Math.floor(Math.random()*high);
-	return randomNumber;
-
-	}		
+var done = false;
+while (!done) {
+	randomObject = Math.floor(Math.random()*50);
+	var randomNumber= quantumData[randomObject];
+	if (randomNumber < high) {
+		done = true;
+		return randomNumber;
+	} 
+}
+}
+		
 function Battle(enemyName,enemyCannons,enemyHull,enemyCrew){
 	while (enemyHull>0 && hull>0){			
 	var attack=prompt(""+playerName+"          "+enemyName+"\nHull: "+hull+"                 "+enemyHull+"\nCrew: "+crew+"                 "+enemyCrew+"\nCannons: "+cannons+"                "+enemyCannons+"\nWhat will you do? \n1=fire cannons,\n2=board the ship.");
