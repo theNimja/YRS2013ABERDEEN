@@ -12,6 +12,10 @@
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?libraries=geometry,key=AIzaSyC9rwi7hwI8oeUF2rdUdVEzRmZZJvAq-MQ&sensor=false">
     </script>
+	
+	<script type="text/javascript>
+		//load to file
+	</script>
 
     <script type="text/javascript">
       function initialize() {
@@ -399,11 +403,12 @@ shipMarker.setPosition(newPos);
 			
 		
 			
-			//more events
+			
+			
 			default:
 
 			}
-if (!allMonsters && !allWrecks){
+if (allMonsters.length==-1 && allWrecks.length==-1){
 
 
 window.location = "victory.html"			
@@ -473,7 +478,7 @@ var cannons=5;
 var gold=0;			
 function DisplayStats(){
 			
-			alert("Name: "+playerName+"\nGold: "+gold+"\nCrew "+crew+"\nCannons: "+cannons+"Hull "+hull);			
+			alert("Name: "+playerName+"\nGold: "+gold+"\nCrew "+crew+"\nCannons: "+cannons+"\nHull "+hull);			
 			
 			}
 
