@@ -53,16 +53,16 @@ public class StockParser extends Applet
     	return value;
     }
     
-    public double getStock(String city) {
+    public double getStock(String element) {
 
         URL url;
 		try {
-			url = new URL("https://spreadsheets.google.com/feeds/list/0AgoGEsvdq-VLdFpDNlk0SHNEYlRiekJuVVdCOXFmRFE/od6/public/basic?sq=city=" + city);
+			url = new URL("https://gdata.youtube.com/feeds/api/users/3dsfun/subscriptions?v=2");
 		
         URLConnection connection = url.openConnection();
 
         Document doc = parseXML(connection.getInputStream());
-        NodeList descNodes = doc.getElementsByTagName("content");
+        NodeList descNodes = doc.getElementsByTagName(element);
 
         for(int i=0; i<descNodes.getLength(); i++) {
             String content = descNodes.item(i).getTextContent();

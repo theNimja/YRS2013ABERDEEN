@@ -417,8 +417,9 @@ shipMarker.setPosition(newPos);
 			}
 
 			var event =RandomNum(13);
-			switch(event){
+			switch(1){
 			case 1:
+			if (event > 6){
 			var pirate = pirates[RandomNum(pirates.length)];
 			alert(pirate+" has found you and is coming for you!")
 			var result = Battle(pirate,RandomNum(11),RandomNum(201),RandomNum(36));
@@ -430,6 +431,7 @@ shipMarker.setPosition(newPos);
 			else{
 			alert("Thou art dead,killed by"+pirate+".");
 			window.location.reload();
+			}
 			}
 
 			
